@@ -66,36 +66,35 @@ To ensure the reliability and accuracy of the predictive models, the following s
 - **Baseline Logistic Regression**
 The logistic regression model shows significantly better performance for class 0 across all metrics (precision, recall, F1-score) compared to class 1. The overall accuracy of the model is 86.1%, indicating a relatively high rate of correct predictions on the test data.
 ![alt text](Images/logistic_base_model.PNG)
+Let's interpret the given confusion matrix for a baseline logistic regression model:
 
-- From the above, it can be observed that the logistic regression model has a ROC AUC value of 0.8938 on the training data and 0.6169 on the test data. This indicates that the model has a relatively high level of discrimination between classes on the training data compared to the test data.
+- True Positives (TP): 27
+These are instances where the model correctly predicted the positive class.
+- False Negatives (FN): 74
+These are instances where the model incorrectly predicted the negative class, but they actually belong to the positive class.
+- True Negatives (TN): 547
+These are instances where the model correctly predicted the negative class.
+- False Positives (FP): 10
+These are instances where the model incorrectly predicted the positive class, but they actually belong to the negative class.
 
-- The confusion matrix shows the predicted and true labels of the logistic regression model, with 27 true positives, 74 false negatives, 547 true negatives, and 10 false positives.
-
-- In summary, the model achieves a training accuracy of approximately 89.4% and a testing accuracy of around 86.0%, indicating that the model performs reasonably well in predicting class labels for both datasets.
+- From confusion matrix we can calculate metric evaluations, the model achieves a training accuracy of approximately 89.4% and a testing accuracy of around 86.0%, indicating that the model performs reasonably well in predicting class labels for both datasets.
 
 - However, the confusion matrix reveals that the model is not highly accurate in its predictions, and there is evidence of overfitting.
 
 - **Decison Trees classifier model**
 ![alt text](Images/decision_tree_classifier.PNG)
-- roc_auc_train: This metric measures the model's ability to distinguish between the two classes (positive and negative) in the training data. A value of 0.886 indicates that the model effectively classifies the training instances.
-
-- roc_auc_test: This metric evaluates the model's ability to generalize its predictions to new, unseen data. A value of 0.870 suggests that the model maintains good performance on the test data, indicating it is not overfitting.
-
-- accuracy_train: This represents the proportion of correctly classified instances in the training set. A value of 0.886 shows that the model achieves a high accuracy level on the training data.
+From the confusion matrix, we see 80 true positives, 537 true negatives, 29 false positives, and 21 false negatives, indicating improved prediction performance.
 
 - accuracy_test: A value of 0.925 indicates that the model performs very well on the testing data, demonstrating good generalization and no overfitting.
 
-From the confusion matrix, we see 80 true positives, 537 true negatives, 29 false positives, and 21 false negatives, indicating improved prediction performance.
-
 **Random Forest Model**
-![alt text](Images/random_forest_model1.PNG)
 - The Random Forest classifier achieves an accuracy of approximately 87.1% on the training data and 87.2% on the testing data. 
 - It performs well in distinguishing between positive and negative classes, with an area under the ROC curve (AUC) of 0.87 for the training data and 0.82 for the testing data. Overall, the model demonstrates a high level of accuracy in predicting the target variable.
+![alt text](Images/random_forest_model1.PNG)
 -According to the confusion matrix, there are 75 true positives, 507 true negatives, 50 false positives, and 26 false negatives. This accuracy is slightly lower compared to the Decision Tree classifier.
 
 - **Hyperparameter Tuning**: Optimizing model parameters to improve predictive accuracy and robustness.
 - **Random Forest**
-![alt text](Images/random_forest_model_tuning.PNG)
 - The tuned Decision Tree model achieved a training accuracy of 90.4% and an improved test accuracy of 93.6%. This suggests that the model is performing well and has learned patterns in the data that enable accurate predictions.
 The Logistic Regression model attained an AUC-ROC score of around 0.904 on the training data and 0.888 on the test data
 - **Evaluation model-ROC Curve**
@@ -110,10 +109,10 @@ The Logistic Regression model attained an AUC-ROC score of around 0.904 on the t
 
 -The Decision Tree has the largest area under the ROC curve, followed by the Random Forest, indicating superior discriminatory power and better performance in distinguishing between positive and negative classes.
 
--Therefore, the Decision Tree Classifier is the best model for serial because it has the largest area under the curve and the highest accuracy in predicting customer churn.
+-Therefore, the Decision Tree Classifier is the best model for SyriaTel because it has the largest area under the curve and the highest accuracy in predicting customer churn.
 
 **Conclusion**
-By utilizing the best model, which is the Random Forest, Seriatel can achieve significant benefits:
+By utilizing the best model, which is the Random Forest, SyriaTel can achieve significant benefits:
 
 - Accurate Prediction of Customer Churn: The model's high accuracy ensures effective identification of customers likely to churn. This allows Seriatel to proactively implement retention strategies, potentially reducing customer attrition and associated costs.
 
